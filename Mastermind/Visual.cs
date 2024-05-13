@@ -7,11 +7,26 @@ namespace Mastermind
         {
         }
 
+        public void displayID()
+        {
+
+
+
+            MariaDB maria = new MariaDB();
+
+            string username2=maria.CheckUserExist();
+
+            displayLogo(username2,maria);
+        }
+
+
+
+
 
         /// <summary>
         /// Displays Mastermind Logo
         /// </summary>
-        public void displayLogo()
+        public void displayLogo(string username, MariaDB maria)
         {
             Console.WriteLine("  _____                   __                       .__            .___ ");
             Console.WriteLine("  /     \\ _____    _______/  |_  ___________  _____ |__| ____    __| _/ ");
@@ -22,7 +37,7 @@ namespace Mastermind
             Console.WriteLine();
             Console.WriteLine("          --------------------------------------------------------              ");
             Console.WriteLine();
-            Console.WriteLine("                        Welcome to Mastermind game");
+            Console.WriteLine("                        Welcome to Mastermind game " + username.ToUpper());
             Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.WriteLine("          >>> Press any key to enter the game, Esc to exit <<<");
@@ -31,8 +46,9 @@ namespace Mastermind
             ConsoleKeyInfo info = Console.ReadKey(true);
             if (info.Key != ConsoleKey.Escape)
             {
-
-                displayGameMenu();
+                
+                    displayGameMenu(maria, username);
+                
             }
 
 
@@ -41,8 +57,9 @@ namespace Mastermind
         /// <summary>
         /// Displays game menu
         /// </summary>
-        public void displayGameMenu()
+        public void displayGameMenu(MariaDB maria, string username)
         {
+            
 
             bool quit = false;
             do
@@ -60,8 +77,8 @@ namespace Mastermind
                 Console.WriteLine(@"                                   |V| _ __                                    ");
                 Console.WriteLine(@"     --------------------------    | |(/_| ||_|    --------------------------- ");
                 Console.WriteLine("     |     1- Launch new game 2 players                                         |");
-                Console.WriteLine("     |     2- Launch new game 1 player versus Computer                          |");
-                Console.WriteLine("     |     3- See records                                                       |");
+                Console.WriteLine("     |     L- See List Players                                                  |");
+                Console.WriteLine("     |     M- See records                                                       |");
                 Console.WriteLine("     |     Esc - Quit                                                           |");
                 Console.WriteLine("      ------------------------------------------------------------------------- ");
 
@@ -81,14 +98,12 @@ namespace Mastermind
                             display2PlayersGame();
                             optionMenuChosen = true;
                             break;
-                        case ConsoleKey.D2:        
-                        case ConsoleKey.NumPad2:
-                            display1PlayerGame();
+                        case ConsoleKey.L:
+                            maria.ListPlayers(maria,username);
                             optionMenuChosen = true;
                             break;
-                        case ConsoleKey.D3:         
-                        case ConsoleKey.NumPad3:
-                            displayRecord();
+                        case ConsoleKey.M:         
+                            maria.ListRecords(username,maria);
                             optionMenuChosen = true;
                             break;
                         default: 
@@ -108,13 +123,13 @@ namespace Mastermind
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
 
-            //Affiche le titre
             Console.WriteLine(@" _______                    ________                         ________   ________ ");
             Console.WriteLine(@" \      \   ______  _  __  /  _____/_____    _____   ____   /_   \   \ /   /_   |");
             Console.WriteLine(@" /   |   \_/ __ \ \/ \/ / /   \  ___\__  \  /     \_/ __ \   |   |\   Y   / |   |");
             Console.WriteLine(@"/    |    \  ___/\     /  \    \_\  \/ __ \|  Y Y  \  ___/   |   | \     /  |   |");
             Console.WriteLine(@"\____|__  /\___  >\/\_/    \______  (____  /__|_|  /\___  >  |___|  \___/   |___|");
             Console.WriteLine(@"        \/     \/                 \/     \/      \/     \/                       ");
+            Console.WriteLine();
             Console.WriteLine();
 
 
@@ -128,6 +143,7 @@ namespace Mastermind
             {
                 name = nom,
             };
+            Console.WriteLine();
 
             do
             {
@@ -139,24 +155,16 @@ namespace Mastermind
                 name = nom,
             };
 
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+
+
+            Board board = new Board();
             PlayGameMastermind play = new PlayGameMastermind();
-            play.game2Players(playerG, playerS);
+            play.game2Players(playerG, playerS, board);
 
         }
-
-        
-
-        public void display1PlayerGame()
-        {
-            Console.WriteLine("Option 2");
-            string inpu = Console.ReadLine();
-        }
-        public void displayRecord()
-        {
-            Console.WriteLine("Option 3");
-            string inpu = Console.ReadLine();
-        }
-
 
 
     }

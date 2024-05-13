@@ -10,4 +10,10 @@
   <ItemGroup>
     <Compile Remove="Test.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="MySqlConnector" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="2.3.6" />
+  </ItemGroup>
 </Project>

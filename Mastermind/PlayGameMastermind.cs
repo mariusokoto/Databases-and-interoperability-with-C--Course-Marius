@@ -11,21 +11,19 @@ namespace Mastermind
         public PlayGameMastermind()
         { }
 
-        public void game2Players(PlayerGuessRow playerG, PlayerSolution playerS)
+        public void game2Players(PlayerGuessRow playerG, PlayerSolution playerS, Board board)
         {
             playerS.createSecretRow();
+            Console.Clear();
 
+            playerG.createRow();
+            Console.Clear();
+       
         }
 
-        public string askName()
+        public void checkWin(PlayerGuessRow playerG, PlayerSolution playerS)
         {
-            string name;
-            do
-            {
-                name = Console.ReadLine();
 
-            } while (name == null);
-            return name;
         }
 
         

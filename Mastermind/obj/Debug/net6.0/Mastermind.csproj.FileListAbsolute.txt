@@ -13,3 +13,7 @@
 /Users/mariusleorat/Projects/Mastermind/Mastermind/obj/Debug/net6.0/Mastermind.pdb
 /Users/mariusleorat/Projects/Mastermind/Mastermind/obj/Debug/net6.0/Mastermind.genruntimeconfig.cache
 /Users/mariusleorat/Projects/Mastermind/Mastermind/obj/Debug/net6.0/ref/Mastermind.dll
+/Users/mariusleorat/Projects/Mastermind/Mastermind/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/mariusleorat/Projects/Mastermind/Mastermind/bin/Debug/net6.0/MySqlConnector.dll
+/Users/mariusleorat/Projects/Mastermind/Mastermind/bin/Debug/net6.0/System.Diagnostics.DiagnosticSource.dll
+/Users/mariusleorat/Projects/Mastermind/Mastermind/obj/Debug/net6.0/Mastermind.csproj.CopyComplete
