@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "f9Fp3anUBtkAt2L92FVPHsr7vNc7fXdXwNF7lPTOrzxOj6gg3C7mZO3Nja/BYDquZy1U+nz1copQM9TfK1ElJw==",
+  "success": true,
+  "projectFilePath": "/Users/mariusleorat/Projects/E7.TheProfessorMariusLeorat/E7.TheProfessorMariusLeorat/E7.TheProfessorMariusLeorat.csproj",
+  "expectedPackageFiles": [
+    "/Users/mariusleorat/.nuget/packages/microsoft.extensions.logging.abstractions/7.0.1/microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
+    "/Users/mariusleorat/.nuget/packages/mysqlconnector/2.3.7/mysqlconnector.2.3.7.nupkg.sha512",
+    "/Users/mariusleorat/.nuget/packages/system.diagnostics.diagnosticsource/7.0.2/system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512",
+    "/Users/mariusleorat/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
